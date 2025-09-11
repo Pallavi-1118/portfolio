@@ -1,69 +1,158 @@
-<html>
-    <head>
-        <title>Grid</title>
-        <link rel="stylesheet" href="grid.css">
-        <style>                
-        .temp {
-            border: 2px solid rgb(4, 0, 0);
-            width: 70%;
-            /*margin-left: 35%;*/
-            margin-top: 5%;
-            padding: 10px;
-            background-color: rgb(255, 255, 255);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
         }
-        .form{
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-gap: 10px;
-        }
-        button{
-            grid-column: span 2;
-           
-        }
-        </style>
-    </head>
-    <body>
-        <nav>
-           
-        </nav>
-        <div class="temp">
-        <form class="form">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-                <label for="usn">USN</label>
-            <input type="text" id="usn" name="usn" placeholder="USN">
-            <label for="gender">Gender</label>
-            <input></input>
-            <input type="radio" id="male" name="gender" value="Male">Male</button>
-           
-            <input type="radio" id="female" name="gender" value="Female">Female</button>
-                <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="Phone">
-            <button type="submit" value="Submit" >Submit</button>
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Form Container -->
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl w-full max-w-2xl">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Student Registration</h2>
+
+        <!-- Message box for displaying success/error messages -->
+        <div id="message-box" class="hidden mb-4 p-4 rounded-lg text-center font-semibold"></div>
+
+        <!-- Form itself using a responsive Grid layout -->
+        <form id="registration-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Name Field -->
+            <div class="col-span-1 md:col-span-2">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" name="name" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+
+            <!-- Email Field -->
+            <div class="col-span-1 md:col-span-2">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email" id="email" name="email" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+
+            <!-- USN Field -->
+            <div class="col-span-1">
+                <label for="usn" class="block text-sm font-medium text-gray-700 mb-1">USN</label>
+                <input type="text" id="usn" name="usn" placeholder="University Serial Number" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+            
+            <!-- Phone Field -->
+            <div class="col-span-1">
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., +15551234567" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+
+            <!-- Gender & Hobbies -->
+            <div class="col-span-1">
+                <span class="block text-sm font-medium text-gray-700 mb-2">Gender</span>
+                <div class="flex items-center space-x-6">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="gender" value="male" class="form-radio text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-2">Male</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="gender" value="female" class="form-radio text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-2">Female</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <span class="block text-sm font-medium text-gray-700 mb-2">Hobbies</span>
+                <div class="grid grid-cols-2 gap-2">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="hobbies" value="reading" class="rounded-sm text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-2">Reading</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="hobbies" value="sports" class="rounded-sm text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-2">Sports</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="hobbies" value="gaming" class="rounded-sm text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-2">Gaming</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="hobbies" value="music" class="rounded-sm text-blue-600 focus:ring-2 focus:ring-blue-500">
+                        <span class="ml-2">Music</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="col-span-1">
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input type="password" id="password" name="password" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="col-span-1">
+                <label for="confirm-password" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-span-1 md:col-span-2 mt-4 text-center">
+                <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+                    Submit
+                </button>
+            </div>
         </form>
-        </div>
-        <table>
-            <tr>
-                <td>Name</td>
-                <td><input type="text" id="n" name="n"></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="email" id="e" name="e"></td>
-            </tr>
-            <tr>
-                <td>USN</td>
-                <td><input type="text" id="u" name="u"></td>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <td><input type="text" id="p" name="p"></td>        
-            </tr>  
-            <tr align="center">
-                <td ><input type="submit" value="Submit" ></td>
-            </tr>
-        </table>
-    </body>
+    </div>
+    
+    <script>
+        const form = document.getElementById('registration-form');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const messageBox = document.getElementById('message-box');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            messageBox.textContent = '';
+            messageBox.className = 'hidden mb-4 p-4 rounded-lg text-center font-semibold';
+
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                showMessage('Passwords do not match!', 'bg-red-200 text-red-800');
+                return;
+            }
+
+            const requiredFields = form.querySelectorAll('[required]');
+            let allFieldsValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    allFieldsValid = false;
+                }
+            });
+
+            if (!allFieldsValid) {
+                showMessage('Please fill out all required fields.', 'bg-red-200 text-red-800');
+                return;
+            }
+
+            showMessage('Registration successful! Thank you.', 'bg-green-200 text-green-800');
+            form.reset();
+        });
+
+        function showMessage(text, classes) {
+            messageBox.textContent = text;
+            messageBox.className = `block mb-4 p-4 rounded-lg text-center font-semibold ${classes}`;
+        }
+    </script>
+</body>
 </html>
