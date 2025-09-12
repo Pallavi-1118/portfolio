@@ -1,0 +1,27 @@
+function calculateTriangleArea() {
+  // Get the values of base and height from the HTML input fields
+  const base = document.getElementById('base').value;
+  const height = document.getElementById('height').value;
+
+  // Check if the input is a valid number
+  if (isNaN(base) || isNaN(height)) {
+    document.getElementById('result').textContent = "Please enter a valid number.";
+    return;
+  }
+
+  // Convert the input values to floating-point numbers
+  const baseValue = parseFloat(base);
+  const heightValue = parseFloat(height);
+
+  // Check if the values are positive
+  if (baseValue <= 0 || heightValue <= 0) {
+    document.getElementById('result').textContent = "Please enter positive numbers for base and height.";
+    return;
+  }
+
+  // Calculate the area using the formula: 0.5 * base * height
+  const area = 0.5 * baseValue * heightValue;
+
+  // Display the result
+  document.getElementById('result').textContent = `The area of the triangle is: ${area}`;
+}
