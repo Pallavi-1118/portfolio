@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <!-- Use Tailwind CSS via CDN for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased leading-relaxed">
+
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white py-8 px-4 text-center shadow-lg">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-wider">Jane Doe</h1>
+        <p class="text-xl mt-2 font-light">Full Stack Developer & UI Enthusiast</p>
+        <!-- Navigation Bar (Flexbox) -->
+        <nav class="mt-6">
+            <ul class="flex justify-center space-x-4 sm:space-x-8 text-lg font-semibold">
+                <li><a href="#about" class="hover:text-amber-300 transition-colors duration-200">About</a></li>
+                <li><a href="#skills" class="hover:text-amber-300 transition-colors duration-200">Skills</a></li>
+                <li><a href="#projects" class="hover:text-amber-300 transition-colors duration-200">Projects</a></li>
+                <li><a href="#contact" class="hover:text-amber-300 transition-colors duration-200">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto p-4 sm:p-8">
+
+        <!-- About Section (Flexbox for alignment) -->
+        <section id="about" class="flex flex-col md:flex-row items-center bg-white p-8 md:p-12 rounded-2xl shadow-xl mb-12">
+            <div class="md:w-1/3 flex justify-center mb-6 md:mb-0 md:mr-12">
+                <!-- Placeholder image with a fall back -->
+                <img src="https://placehold.co/200x200/2d89ef/ffffff?text=Jane" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/200x200/2d89ef/ffffff?text=Jane';" 
+                     alt="Jane Doe" 
+                     class="rounded-full border-4 border-blue-200 w-48 h-48 object-cover shadow-lg">
+            </div>
+            <div class="md:w-2/3 text-center md:text-left">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">About Me</h2>
+                <p class="text-gray-700 text-lg">
+                    Hi! I'm Jane, a passionate developer crafting modern web experiences. I love building scalable apps, designing beautiful interfaces, and solving real-world problems with code. Let's create something amazing together!
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Skill Cards -->
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    HTML5
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    CSS3
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    JavaScript
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    React
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    Node.js
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    MongoDB
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    Git & GitHub
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center font-bold text-blue-600 transition-all hover:bg-amber-300 hover:text-white transform hover:scale-105">
+                    UI/UX Design
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (CSS Grid) -->
+        <section id="projects" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:shadow-2xl flex flex-col">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x240/2d89ef/ffffff?text=Project+1" alt="Project 1">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2">Portfolio Website</h3>
+                            <p class="text-gray-600 mb-4">A personal portfolio site built with React and styled-components, featuring responsive design and smooth animations.</p>
+                        </div>
+                        <a href="#" class="inline-block text-amber-500 font-bold hover:text-blue-600 transition-colors">View Project &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:shadow-2xl flex flex-col">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x240/ffb900/ffffff?text=Project+2" alt="Project 2">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2">Task Manager App</h3>
+                            <p class="text-gray-600 mb-4">A full-stack MERN app for managing tasks, with authentication, real-time updates, and a clean UI.</p>
+                        </div>
+                        <a href="#" class="inline-block text-amber-500 font-bold hover:text-blue-600 transition-colors">View Project &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:shadow-2xl flex flex-col">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/400x240/2d89ef/ffffff?text=Project+3" alt="Project 3">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2">Weather Dashboard</h3>
+                            <p class="text-gray-600 mb-4">A responsive dashboard that fetches live weather data using APIs, with charts and location search.</p>
+                        </div>
+                        <a href="#" class="inline-block text-amber-500 font-bold hover:text-blue-600 transition-colors">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Contact</h2>
+            <form class="bg-white p-8 rounded-xl shadow-lg max-w-lg mx-auto grid grid-cols-1 gap-6">
+                <div>
+                    <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+                </div>
+                <div>
+                    <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+                </div>
+                <div>
+                    <textarea placeholder="Your Message" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 min-h-[100px]"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-300">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 px-4 text-center mt-auto">
+        <p class="text-sm font-light">&copy; 2024 Jane Doe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
