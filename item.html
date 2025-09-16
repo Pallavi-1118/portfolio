@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>;
+</head>
+<body>
+    <title> this is a list</title>
+     <h1>to do list</h1> 
+     <br><br>
+     <h2>your task to complete</h2>
+ <ul id="list">
+  <li>task 1 </li>
+</ul>git
+<input type="text" id="myInput">
+<button id="add">Add Item</button>
+<button id="complete">complete</button>
+</body>
+</html>
+ <script>
+    $(document).ready(function(){
+        let task=$("#myInput"),val();
+        if(task){
+            $("#list").append("<li>"+task+"</li>");
+            $("#myInput"),val('');
+             $("#complete").click(function(){
+      $("#list li:first").remove();
+    });
+  }
+    });
+</script>
